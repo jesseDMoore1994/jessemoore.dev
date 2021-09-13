@@ -20,3 +20,4 @@ jobs:
     - uses: JesseDMoore1994/gh-pages-pelican-action@0.1.10
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GH_PAGES_CNAME: jessemoore.dev
