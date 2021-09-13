@@ -1,0 +1,22 @@
+name: Pelican site CI
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source repository
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+    - uses: JesseDMoore1994/gh-pages-pelican-action@0.1.10
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
