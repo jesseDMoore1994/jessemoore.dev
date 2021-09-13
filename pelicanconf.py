@@ -3,7 +3,7 @@
 
 AUTHOR = 'Jesse Moore'
 SITENAME = 'jessemoore.dev'
-SITEURL = 'jessemoore.dev'
+SITEURL = ''
 DESCRIPTION = 'Welcome to my website! You can find navigation tools at the bottom of this page!'
 
 PATH = 'content'
