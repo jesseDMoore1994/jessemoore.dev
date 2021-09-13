@@ -18,7 +18,7 @@ is a writeup that details how I used those tools in order to build this website.
 I would like to suggest going to view the README.md on github which details the process for developing the webite.
 This page is the published version of the output created in the main branch here.
 
-`<http://github.com/JesseDMoore1994/jessemoore.dev>`_
+`<https://github.com/JesseDMoore1994/jessemoore.dev>`_
 
 
 Pelican
