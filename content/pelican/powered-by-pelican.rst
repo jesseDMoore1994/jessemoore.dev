@@ -18,7 +18,7 @@ is a writeup that details how I used those tools in order to build this website.
 I would like to suggest going to view the README.md on github which details the process for developing the webite.
 This page is the published version of the output created in the main branch here.
 
-`<github.com/JesseDMoore1994/jessemoore.dev>`_
+`<http://github.com/JesseDMoore1994/jessemoore.dev>`_
 
 
 Pelican
@@ -132,8 +132,8 @@ creating-a-github-pages-site>`_ for setting up github pages on your repository.
 How did you get a domain?
 *************************
 
-I use google domains to redirect traffic from `<jessemoore.dev>`_ to `<jessedmoore1994.github.io/jessemoore.dev>`_.
-Check out google domains `here <domains.google.com>`_. I also have email forwarding for the domain, so please shoot me
+I use google domains to redirect traffic from `<https://jessemoore.dev>`_ to `<https://jessedmoore1994.github.io/jessemoore.dev>`_.
+Check out google domains `here <https://domains.google.com>`_. I also have email forwarding for the domain, so please shoot me
 one if you feel the need using jesse@jessemoore.dev.
 
 Creating this article!
