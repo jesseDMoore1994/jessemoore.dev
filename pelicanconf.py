@@ -8,6 +8,8 @@ DESCRIPTION = 'Welcome to my website! You can find navigation tools at the botto
 
 PATH = 'content'
 
+STATIC_PATHS = ['static']
+
 TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'en'

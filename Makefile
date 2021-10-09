@@ -3,15 +3,15 @@ VENV_ACTIVATE=. $(VENV)/bin/activate
 PYTHON=$(VENV)/bin/python3
 OUTPUT_FOLDER=$
 
-$(VENV)/bin/activate: requirements.txt
+$(VENV_ACTIVATE): requirements.txt
 	python3 -m venv $(VENV)
 	./$(VENV)/bin/pip install -r requirements.txt
 
-output: $(VENV)/bin/activate
-	. $(VENV)/bin/activate && pelican content
+output: $(VENV_ACTIVATE)
+	$(VENV_ACTIVATE) && pelican content
 
 host:
-	. $(VENV)/bin/activate && pelican -l output
+	$(VENV_ACTIVATE) && pelican -l output
 
 clean:
 	rm -rf output
