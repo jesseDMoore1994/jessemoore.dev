@@ -31,35 +31,34 @@ deliver high quality software both effortlessly and effectively.
 
 **ADTRAN Software Development Engineer** Huntsville, AL January 2017 - Present
 
-* Developed software utilizing test driven agile software methodologies
-   in ADTRAN codebases for embedded software systems to provide
-   software features.
+* Developed software utilizing test driven agile software methodologies in ADTRAN codebases for
+  embedded software systems to provide software features.
 
 * Maintained and created new CI/CD automation scripting to test and
-   build ADTRAN software using a mixture of real and virtual
-   resources.
+  build ADTRAN software using a mixture of real and virtual
+  resources.
 
 * Worked with other software development teams to facilitate ease in
-   software development of various specific components in a way that
-   can allow for both fast iterative development as well as seamless
-   integration into the greater project.
+  software development of various specific components in a way that
+  can allow for both fast iterative development as well as seamless
+  integration into the greater project.
 
 
 
 **CGI Federal Cyber Security Intern** Huntsville, AL June 2016 - August 2016
 
 * Worked as a Cyber-Security analyst using network analysis tools and
-   personal custom-built scripts to monitor and defend CGI networks
-   in a Secure Operations Center.
+  personal custom-built scripts to monitor and defend CGI networks
+  in a Secure Operations Center.
 
 
 
 **ADTRAN Co-op Student** Huntsville, AL August 2014 - April 2016
 
 * Three terms of cooperative education on various diverse development
-   teams working on everything from software regression testing with
-   TCL, C++ feature development and bug hunting on embedded systems,
-   and finally web-based solution orchestration.
+  teams working on everything from software regression testing with
+  TCL, C++ feature development and bug hunting on embedded systems,
+  and finally web-based solution orchestration.
 
 **Academic Projects**
 =====================
@@ -85,15 +84,19 @@ Github: https://github.com/jesseDMoore1994/artificial_neural_network
 **Hobby Projects**
 ==================
 
-**C++ Blackjack Game** - https://github.com/jesseDMoore1994/blackjack
+**C++ Blackjack Game** -
 
 A simple C++ blackjack card game developed using TDD in a dockerized
 build environment.
 
-**Snake** - https://github.com/jesseDMoore1994/snake
+Github: https://github.com/jesseDMoore1994/blackjack
+
+**Snake** -
 
 A simple typescript implementation of the classic game snake using
 excalibur.js.
+
+Github: https://github.com/jesseDMoore1994/snake
 
 **Education**
 =============
