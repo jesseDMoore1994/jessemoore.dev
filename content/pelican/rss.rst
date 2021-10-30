@@ -6,8 +6,8 @@ RSS Support now enabled!
 :lang: en
 :slug: rss
 
-Visit the feeds directory!
-**************************
+Where are the feeds?
+********************
 
 One of my friends Morgan was talking to me about this website yesterday and he prefers to read this type of content
 using an RSS reader. I don't really use RSS so it wasn't part of my initial deployment as it had not crossed my mind.
