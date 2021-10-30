@@ -14,8 +14,12 @@ using an RSS reader. I don't really use RSS so it wasn't part of my initial depl
 
 Pelican to the Rescue! I am now producing atom feeds at the path ``/feeds``.
 
+One can follow the feed for all blog postings at the following URL:
+`<https://jessemoore.dev/feeds/all.atom.xml>`_
 
-`<https://jessemoore.dev/feeds>`_
+Or, if you are only interested in a specific category, you can use follow just that one category. For instance, if you
+just get sadistic thrills by listening to me complain about make, you could use:
+`<https://jessemoore.dev/feeds/make.atom.xml>`_
 
 
 Pelican Configuration to make it possible
