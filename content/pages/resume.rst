@@ -6,123 +6,54 @@ My Resume
 :author: Jesse Moore
 :summary: About Jesse Moore
 
-If you want a word doc version you can find it `here <{static}/static/JesseM_Resume_Summer_2021.docx>`_. What follows
-is an rst formatted copy of that document courtesty of `rstdoc <https://github.com/rstdoc/rstdoc>`_.
-
-**Jesse Moore**
-===============
-
-1204 Willowbrook Drive, Apt C. Phone: (256)975-6446
-
-Huntsville Alabama, 35802 Email: jesse@jessemoore.dev
-
-Github: https://github.com/jesseDMoore1994
-
-**Summary**
-===========
-
-A personable and professional software engineer with both graduate
-and practical experience as it relates to the analysis and design of
-software systems, with a particular interest in the processes to
-deliver high quality software both effortlessly and effectively.
-
-**Experience**
-==============
-
-**ADTRAN Software Development Engineer** Huntsville, AL January 2017 - Present
-
-* Developed software utilizing test driven agile software methodologies in ADTRAN codebases for
-  embedded software systems to provide software features.
-
-* Maintained and created new CI/CD automation scripting to test and
-  build ADTRAN software using a mixture of real and virtual
-  resources.
-
-* Worked with other software development teams to facilitate ease in
-  software development of various specific components in a way that
-  can allow for both fast iterative development as well as seamless
-  integration into the greater project.
+If you want a word doc version you can find it `here <{static}/static/JesseM_SummerResume2022.docx>`_. What follows
+is an rst interpreted copy of that document.
 
 
+Jesse Moore
+============================================================================================================================================================================================================================================================================
+997 Slaughter Road, Madison AL, 35758 · (256)975-6446
+jesse@jessemoore.dev · https://www.linkedin.com/in/jesse-moore-dev/ · jessemoore.dev
 
-**CGI Federal Cyber Security Intern** Huntsville, AL June 2016 - August 2016
+   A personable and professional software engineer with both graduate and practical experience as it relates to the analysis and design of software systems, with a particular interest in the processes to deliver high quality software both effortlessly and effectively.
 
-* Worked as a Cyber-Security analyst using network analysis tools and
-  personal custom-built scripts to monitor and defend CGI networks
-  in a Secure Operations Center.
+Experience
+==========
 
+Software Development Engineer, Sr. **ADTRAN**
 
+- Developed software utilizing test driven agile software methodologies in ADTRAN codebases for embedded software systems to provide software features.
+- Maintained and created new CI/CD automation scripting to test and build ADTRAN software using a mixture of real and virtual resources.
+- Worked with other software development teams to facilitate ease in software development of various specific components in a way that can allow for both fast iterative development as well as seamless integration into the greater project.
 
-**ADTRAN Co-op Student** Huntsville, AL August 2014 - April 2016
+Education
+=========
 
-* Three terms of cooperative education on various diverse development
-  teams working on everything from software regression testing with
-  TCL, C++ feature development and bug hunting on embedded systems,
-  and finally web-based solution orchestration.
+Master of Science in Software Engineering, **UAH**
 
-**Academic Projects**
-=====================
+With concentration on Big Data and Data Mining. GPA: 3.833
 
-**Satellite Power Scheduler Application Fall 2020**
+Bachelor of Science in Computer Science, **UAH**
 
-This project was a multifaceted software solution that would take
-power consumption data of various IOT devices under simulated
-workload and provide forecasting data given low power constraints.
-The goal was that this software could be further developed to target
-LEO satellite deployments.
+With Honors. GPA: 3.733
 
-Github: https://github.com/CPE656Fall2020
+Skills
+======
 
-**Artificial Neural Network Fall 2019**
+====================== ====================
+-  Python              -  Docker
 
-This project is a collection of artificial neural networks written in
-Python to demonstrate feed-forward and back-propagation in neural
-networks of differing size input, output, and hidden network layers.
+-  Jenkins CI/CD       -  Ansible
 
-Github: https://github.com/jesseDMoore1994/artificial_neural_network
+-  Computer Networking -  Linux Development
+====================== ====================
 
-**Hobby Projects**
-==================
+Activities
+==========
 
-**C++ Blackjack Game** -
+I code recreationally, please check out my contributions on Github!
+https://github.com/jesseDMoore1994
 
-A simple C++ blackjack card game developed using TDD in a dockerized
-build environment.
+I maintain a technical blog site about programming topics!
 
-Github: https://github.com/jesseDMoore1994/blackjack
-
-**Snake** -
-
-A simple typescript implementation of the classic game snake using
-excalibur.js.
-
-Github: https://github.com/jesseDMoore1994/snake
-
-**Education**
-=============
-
-**Master of Science in Software Engineering (with Concentration on Big
-Data and Data Mining)**
-
-University of Alabama in Huntsville 2017-2021
-
-Huntsville, AL GPA: 3.833
-
-**Bachelor of Science in Computer Science (with Honors)**
-
-University of Alabama in Huntsville 2012-2016
-
-Huntsville, AL GPA: 3.733
-
-**Technical Skills**
-====================
-
-**Frequent Programming Languages:** Python, Jenkins DSL, Groovy, Make
-
-**Less Frequent Programming Languages:** C++, C, Java, Typescript,
-Haskell
-
-**Areas of Domain Knowledge:** Computer Networking, Openstack
-Development, Jenkins, Ansible, Virtualization Tools, Network
-Analysis\ **,** Linux Administration, Linux Build Systems, Docker,
-MaaS, Kubernetes
+https://jessemoore.dev
