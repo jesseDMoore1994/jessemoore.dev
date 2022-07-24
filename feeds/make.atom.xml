@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>jessemoore.dev - make</title><link href="/" rel="alternate"></link><link href="/feeds/make.atom.xml" rel="self"></link><id>/</id><updated>2021-09-14T00:00:00-05:00</updated><entry><title>An interesting GNU Make feature</title><link href="/make-SHELL-issue.html" rel="alternate"></link><published>2021-09-14T00:00:00-05:00</published><updated>2021-09-14T00:00:00-05:00</updated><author><name>Jesse Moore</name></author><id>tag:None,2021-09-14:/make-SHELL-issue.html</id><summary type="html">&lt;div class="section" id="background"&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;I find that make is one of those tools that I actually need to sit down and read the manual for, but I don't think I'll
+ever have the time or attention span to do so. The topic itself is interesting, I would be particularly iterested if
+there were …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="background"&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;I find that make is one of those tools that I actually need to sit down and read the manual for, but I don't think I'll
+ever have the time or attention span to do so. The topic itself is interesting, I would be particularly iterested if
+there were some interactive programming challenges or other interactive forms of make training that is interactive.
+I know a fair bit (At least, I think I do) about makefiles and I feel relatively comfortable with Make.&lt;/p&gt;
+&lt;p&gt;But...&lt;/p&gt;
+&lt;p&gt;There is always something with make, once you think you are finally safe from shooting yourself in the foot, you will
+find a way to do it again. One of my primary complaints when it comes to make is that when it fails, there are rarely
+good answers to the fundamental questions of &lt;em&gt;how&lt;/em&gt; or &lt;em&gt;why&lt;/em&gt; the failure is occurring. Sometimes make fails in ways
+that might even mislead you to other parts of your projects, such as in this following case.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-make-feature"&gt;
+&lt;h2&gt;The Make Feature&lt;/h2&gt;
+&lt;p&gt;The make feature in question is &lt;tt class="docutils literal"&gt;SHELL&lt;/tt&gt;. For those who know about &lt;tt class="docutils literal"&gt;SHELL&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;SHELL&lt;/tt&gt; is a special variable in gnu
+make that is used to define the shell you want to use for your execution of the make recipies in that makefile.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;SHELL&lt;/span&gt; &lt;span class="o"&gt;?=&lt;/span&gt; /bin/sh
+
+&lt;span class="nf"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="c"&gt;    # This file touch is run in $(SHELL)&lt;/span&gt;
+    touch &lt;span class="nb"&gt;test&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That, in and of itself, I have no strong problems with. In fact, I could find it to be useful if I needed to exploit the
+features of a new shell during my build process. That said, when I started work today, I did &lt;strong&gt;NOT&lt;/strong&gt; know, about this
+feature at all. I think we know where this is going...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-it-happened"&gt;
+&lt;h2&gt;How it Happened&lt;/h2&gt;
+&lt;p&gt;Much of my build process at work is docker containers, they are just too convenvient for reproducability. In that way,
+Make and docker interact quite frequently at least in my present experience. It is not uncommon for me to use make to
+drive some collection of docker commands. Not only are a lot of our projects themselves docker containers, but most of
+our tooling is in docker containers too. One of my favorite tools that has a docker container is &lt;tt class="docutils literal"&gt;jq&lt;/tt&gt;. I find it to
+be a useful tool when trying to incorporate some more structured data into some element of the pipeline. Many projects
+produce json reports that can be used to receive information about the operation that it just performed, or maybe
+there is some information that comes as part of a build output. In environments like Jenkins in my case, someone else is
+maintaining the executors so I can't just install whatever I want on it. Luckily, docker is installed on them, so if
+there is a tool that I need in my build process I can containerize it and use it in the CI/CD pipeline.&lt;/p&gt;
+&lt;p&gt;I was working on creating such a project for work. It is a tool that uses some test timing data and generates a set of
+graphs and extrapolation data. Just a simple python project that we want to run when we finish the tests to see how our
+current builds perform in conjunction with older builds. Well we finally got the tool far enough along that we were
+beginning to attach it to the pipeline proper. I started developing a makefile and Jenkinsfile that we would use to
+run this dockerized report tool.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;docker_name&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; ubuntu
+&lt;span class="nv"&gt;DOCKER_VER&lt;/span&gt; &lt;span class="o"&gt;?=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;.04
+&lt;span class="nv"&gt;docker_args&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; -v &lt;span class="k"&gt;$(&lt;/span&gt;shell &lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;:/app &lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt; -t &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;-it&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --rm -u &lt;span class="k"&gt;$(&lt;/span&gt;id -u&lt;span class="k"&gt;)&lt;/span&gt;:&lt;span class="k"&gt;$(&lt;/span&gt;id -g&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;DOCKER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; docker run &lt;span class="k"&gt;$(&lt;/span&gt;docker_args&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;docker_name&lt;span class="k"&gt;)&lt;/span&gt;:&lt;span class="k"&gt;$(&lt;/span&gt;DOCKER_VER&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;SHELL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;DOCKER&lt;span class="k"&gt;)&lt;/span&gt; /bin/bash
+
+&lt;span class="nf"&gt;.PHONY&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;
+&lt;span class="nf"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;$(&lt;/span&gt;SHELL&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the code I wrote, I didn't realize at the time that I was messing with some mystical make variable, I was just
+trying to make a variable that I could use to spawn an interactive shell inside of my container. I had inadvertently
+just told make to try and run everything through &lt;tt class="docutils literal"&gt;docker run &lt;span class="pre"&gt;-v&lt;/span&gt; &lt;span class="pre"&gt;(...)&lt;/span&gt; ubuntu:20.04 /bin/bash&lt;/tt&gt; instead of &lt;tt class="docutils literal"&gt;/bin/sh&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Sure enough, make will run with this, and the error you git will be incredibly cryptic. On first glance, this message
+seems to suggest that the container is having issues, but it is in fact make doing what you told it to do that is
+causing the issue.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run -it --rm -v /home/jmoore/projects/app:/app ubuntu:20.04 &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;cd /app &amp;amp;&amp;amp; ./app&amp;quot;&lt;/span&gt;
+docker: Error response from daemon: failed to create shim: OCI &lt;span class="se"&gt;\&lt;/span&gt;
+    runtime create failed: container_linux.go:380: &lt;span class="se"&gt;\&lt;/span&gt;
+    starting container process caused: exec: &lt;span class="s2"&gt;&amp;quot;-c&amp;quot;&lt;/span&gt;: executable file &lt;span class="se"&gt;\&lt;/span&gt;
+    not found &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$PATH&lt;/span&gt;: unknown.
+make: *** &lt;span class="o"&gt;[&lt;/span&gt;Makefile:28: reports&lt;span class="o"&gt;]&lt;/span&gt; Error &lt;span class="m"&gt;127&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The only way that I managed to figure out that it had to be the makefile, was that I took that exact same command and
+ran it perfectly fine from &lt;tt class="docutils literal"&gt;zsh&lt;/tt&gt;. Andrew and I noticed that and we went to look at he makefile. &lt;tt class="docutils literal"&gt;SHELL&lt;/tt&gt; was the only
+variable that we could see causing the issue. Sure enough I renamed the variable and poof, everything is back to normal.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="make"></category><category term="Make"></category></entry></feed>

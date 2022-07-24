@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>jessemoore.dev - pelican</title><link href="/" rel="alternate"></link><link href="/feeds/pelican.atom.xml" rel="self"></link><id>/</id><updated>2021-10-30T00:00:00-05:00</updated><entry><title>RSS Support now enabled!</title><link href="/rss.html" rel="alternate"></link><published>2021-10-30T00:00:00-05:00</published><updated>2021-10-30T00:00:00-05:00</updated><author><name>Jesse Moore</name></author><id>tag:None,2021-10-30:/rss.html</id><summary type="html">&lt;div class="section" id="where-are-the-feeds"&gt;
+&lt;h2&gt;Where are the feeds?&lt;/h2&gt;
+&lt;p&gt;One of my friends Morgan was talking to me about this website yesterday and he prefers to read this type of content
+using an RSS reader. I don't really use RSS so it wasn't part of my initial deployment as it had not crossed my mind …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="where-are-the-feeds"&gt;
+&lt;h2&gt;Where are the feeds?&lt;/h2&gt;
+&lt;p&gt;One of my friends Morgan was talking to me about this website yesterday and he prefers to read this type of content
+using an RSS reader. I don't really use RSS so it wasn't part of my initial deployment as it had not crossed my mind.&lt;/p&gt;
+&lt;p&gt;Pelican to the Rescue! I am now producing atom feeds at the path &lt;tt class="docutils literal"&gt;/feeds&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;One can follow the feed for all blog postings at the following URL:
+&lt;a class="reference external" href="https://jessemoore.dev/feeds/all.atom.xml"&gt;https://jessemoore.dev/feeds/all.atom.xml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Or, if you are only interested in a specific category, you can use follow just that one category. For instance, if you
+just get sadistic thrills by listening to me complain about make, you could use:
+&lt;a class="reference external" href="https://jessemoore.dev/feeds/make.atom.xml"&gt;https://jessemoore.dev/feeds/make.atom.xml&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pelican-configuration-to-make-it-possible"&gt;
+&lt;h2&gt;Pelican Configuration to make it possible&lt;/h2&gt;
+&lt;p&gt;The configuration of this feature was actually very trivial, all I had to do was adjust my &lt;tt class="docutils literal"&gt;pelicanconf.py&lt;/tt&gt; to
+include the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/all.atom.xml&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/&lt;/span&gt;&lt;span class="si"&gt;{slug}&lt;/span&gt;&lt;span class="s1"&gt;.atom.xml&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I hope your RSS reader supports Atom feeds Morgan! If not, there are some additional pure RSS settings I can mess with.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="pelican"></category><category term="Pelican"></category></entry><entry><title>Powered By Pelican</title><link href="/powered-py-pelican.html" rel="alternate"></link><published>2021-09-12T00:00:00-05:00</published><updated>2021-09-12T00:00:00-05:00</updated><author><name>Jesse Moore</name></author><id>tag:None,2021-09-12:/powered-py-pelican.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This blog was created as a place for me to technical writeups of things I have done that may be of interest
+to others. I suppose a Hello World! is in order!&lt;/p&gt;
+&lt;p&gt;In addition, it was created as a learning experiment with github actions, github pages, and pelican. The …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This blog was created as a place for me to technical writeups of things I have done that may be of interest
+to others. I suppose a Hello World! is in order!&lt;/p&gt;
+&lt;p&gt;In addition, it was created as a learning experiment with github actions, github pages, and pelican. The following
+is a writeup that details how I used those tools in order to build this website.&lt;/p&gt;
+&lt;p&gt;I would like to suggest going to view the README.md on github which details the process for developing the webite.
+This page is the published version of the output created in the main branch here.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/JesseDMoore1994/jessemoore.dev"&gt;https://github.com/JesseDMoore1994/jessemoore.dev&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pelican"&gt;
+&lt;h2&gt;Pelican&lt;/h2&gt;
+&lt;p&gt;Pelican is a pretty neat tool, you can give it a tree of content and it renders it into a statically built website.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
+&lt;span class="normal"&gt;2&lt;/span&gt;
+&lt;span class="normal"&gt;3&lt;/span&gt;
+&lt;span class="normal"&gt;4&lt;/span&gt;
+&lt;span class="normal"&gt;5&lt;/span&gt;
+&lt;span class="normal"&gt;6&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;➜  jessemoore.dev git:&lt;span class="o"&gt;(&lt;/span&gt;main&lt;span class="o"&gt;)&lt;/span&gt; ✗ tree content
+content
+├── pages
+│   └── about.rst
+└── pelican
+    └── powered-by-pelican.rst
+&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Boy that sure is a lot of folders, what do they do?&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;The pages folder is used to host pages that are not directly blog posts, think like contact info, resume, other&lt;/dt&gt;
+&lt;dd&gt;platforms, etc.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;The pelican folder is a category folder to host articles, this article you are reading currently is in that category.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the future I will likely be adding a folder for each new category, an images folder to store all my images, and more.&lt;/p&gt;
+&lt;p&gt;While I am working on the project incrementally, be it adjusting theme or adding new articles, I use the following
+command in order to build and display the render locally:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make output &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make host
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the simple makefile that I just use to do some housekeeping.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# [main x] {} jessemoore.dev cat Makefile&lt;/span&gt;
+&lt;span class="nv"&gt;VENV&lt;/span&gt;&lt;span class="o"&gt;?=&lt;/span&gt;venv
+&lt;span class="nv"&gt;VENV_ACTIVATE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;. &lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;/bin/activate
+&lt;span class="nv"&gt;PYTHON&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;/bin/python3
+&lt;span class="nv"&gt;OUTPUT_FOLDER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$
+
+&lt;span class="nf"&gt;$(VENV)/bin/activate&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;.&lt;span class="n"&gt;txt&lt;/span&gt;
+        python3 -m venv &lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;
+        ./&lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;/bin/pip install -r requirements.txt
+
+&lt;span class="nf"&gt;output&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;VENV&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="n"&gt;bin&lt;/span&gt;/&lt;span class="n"&gt;activate&lt;/span&gt;
+        . &lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;/bin/activate &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; pelican content
+
+&lt;span class="nf"&gt;host&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        . &lt;span class="k"&gt;$(&lt;/span&gt;VENV&lt;span class="k"&gt;)&lt;/span&gt;/bin/activate &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; pelican -l output
+
+&lt;span class="nf"&gt;clean&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        rm -rf output
+
+&lt;span class="nf"&gt;clean-all&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        rm -rf venv output
+
+&lt;span class="nf"&gt;.PHONY&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;clean&lt;/span&gt; &lt;span class="n"&gt;clean&lt;/span&gt;-&lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way I can view what my changes look like before checking them into main.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;em&gt;To get the themeing displayed locally I have&lt;/em&gt;
+&lt;em&gt;to uncomment the RELATIVE_URLS=True variable&lt;/em&gt;
+&lt;em&gt;in pelicanconf.py. I comment it back out&lt;/em&gt;
+&lt;em&gt;before I push to main so everything links&lt;/em&gt;
+&lt;em&gt;correctly in pages.&lt;/em&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="deployment"&gt;
+&lt;h2&gt;Deployment&lt;/h2&gt;
+&lt;p&gt;I deploy this website automatically to github pages vis github actions from &lt;a class="reference external" href="https://github.com/nelsonjchen/gh-pages-pelican-action"&gt;gh-pages-pelican-action&lt;/a&gt;. Luckily there was already an existing action that did exactly what I wanted it
+to with just a few tweaks before using it. I just had create a config file for github to wrap it around my project. I
+used the config file from example project for gh-pages-pelican-action as the base for this one.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;➜  jessemoore.dev git:(main) ✗ cat .github/workflows/pelican.yml
+name: Pelican site CI
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source repository
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+    - uses: JesseDMoore1994/gh-pages-pelican-action@0.1.10
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By doing this, whenever I submit code to the main branch of my repository, the code is checked out, then the action
+at version &lt;a class="reference external" href="https://github.com/jesseDMoore1994/gh-pages-pelican-action/tree/0.1.10"&gt;0.1.10&lt;/a&gt; on my github is used to
+deploy the output to the gh-pages branch.&lt;/p&gt;
+&lt;p&gt;Make sure to follow the &lt;a class="reference external" href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"&gt;instructions&lt;/a&gt; for setting up github pages on your repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-did-you-get-a-domain"&gt;
+&lt;h2&gt;How did you get a domain?&lt;/h2&gt;
+&lt;p&gt;I use google domains to redirect traffic from &lt;a class="reference external" href="https://jessemoore.dev"&gt;https://jessemoore.dev&lt;/a&gt; to &lt;a class="reference external" href="https://jessedmoore1994.github.io/jessemoore.dev"&gt;https://jessedmoore1994.github.io/jessemoore.dev&lt;/a&gt;.
+Check out google domains &lt;a class="reference external" href="https://domains.google.com"&gt;here&lt;/a&gt;. I also have email forwarding for the domain, so please shoot me
+one if you feel the need using &lt;a class="reference external" href="mailto:jesse&amp;#64;jessemoore.dev"&gt;jesse&amp;#64;jessemoore.dev&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="creating-this-article"&gt;
+&lt;h2&gt;Creating this article!&lt;/h2&gt;
+&lt;p&gt;To create this article, I created the following rst called pelican.rst to the &lt;a class="reference external" href="https://github.com/jesseDMoore1994/pelican-test/tree/main/content/pelican"&gt;pelican category folder&lt;/a&gt; mentioned earlier. Thats it! One article
+down! 😊&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="creating-non-blog-content"&gt;
+&lt;h2&gt;Creating non-blog content!&lt;/h2&gt;
+&lt;p&gt;You can create non-blog content too, I created the following rst called about.rst in the &lt;a class="reference external" href="https://github.com/jesseDMoore1994/pelican-test/tree/main/content/pages"&gt;pages folder&lt;/a&gt;. I will soon be updating it to include
+more about myself, post socials, etc. I also want to create a page to host my resume.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="pelican"></category><category term="Pelican"></category></entry></feed>
